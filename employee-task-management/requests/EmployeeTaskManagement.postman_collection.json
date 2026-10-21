@@ -1,0 +1,23 @@
+{
+  "info": {
+    "name": "Employee Task Management System",
+    "description": "Sample API requests for the Employee Task Management System",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [{"key": "baseUrl", "value": "http://localhost:8080"}],
+  "item": [
+    {"name":"Create Employee","request":{"method":"POST","header":[{"key":"Content-Type","value":"application/json"}],"body":{"mode":"raw","raw":"{\n  \"id\": 1,\n  \"name\": \"Arun Kumar\",\n  \"email\": \"arun@example.com\",\n  \"department\": \"IT\",\n  \"salary\": 45000\n}"},"url":"{{baseUrl}}/employees"}},
+    {"name":"Get Employees","request":{"method":"GET","url":"{{baseUrl}}/employees"}},
+    {"name":"Get Employee By ID","request":{"method":"GET","url":"{{baseUrl}}/employees/1"}},
+    {"name":"Delete Employee","request":{"method":"DELETE","url":"{{baseUrl}}/employees/1"}},
+    {"name":"Create Task","request":{"method":"POST","header":[{"key":"Content-Type","value":"application/json"}],"body":{"mode":"raw","raw":"{\n  \"taskId\": 101,\n  \"title\": \"Build REST API\",\n  \"description\": \"Implement endpoints\",\n  \"priority\": \"HIGH\"\n}"},"url":"{{baseUrl}}/tasks"}},
+    {"name":"Assign Task","request":{"method":"PUT","url":"{{baseUrl}}/tasks/101/assign/1"}},
+    {"name":"Update Task Status","request":{"method":"PUT","header":[{"key":"Content-Type","value":"application/json"}],"body":{"mode":"raw","raw":"{\n  \"status\": \"COMPLETED\"\n}"},"url":"{{baseUrl}}/tasks/101/status"}},
+    {"name":"Tasks By Employee","request":{"method":"GET","url":"{{baseUrl}}/employees/1/tasks"}},
+    {"name":"Sort Employees By Salary","request":{"method":"GET","url":"{{baseUrl}}/employees/sort/salary"}},
+    {"name":"Sort Tasks By Priority","request":{"method":"GET","url":"{{baseUrl}}/tasks/sort/priority"}},
+    {"name":"Completed Tasks","request":{"method":"GET","url":"{{baseUrl}}/tasks/completed"}},
+    {"name":"Highest Paid Employee","request":{"method":"GET","url":"{{baseUrl}}/employees/highest-salary"}},
+    {"name":"Task Count Report","request":{"method":"GET","url":"{{baseUrl}}/reports/task-count"}}
+  ]
+}
